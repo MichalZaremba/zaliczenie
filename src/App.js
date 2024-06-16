@@ -1,9 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { Button } from "@mui/material";
+import { Header } from "./Header.js";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ textAlign: "center" }}>
+      <Header />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

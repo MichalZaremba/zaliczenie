@@ -1,5 +1,5 @@
 {
-    "extends": ["next/core-web-vitals", "eslint-config-teacode"],
+    "extends": ["eslint-config-teacode"],
     "rules": {
     "react/display-name": "off"
     }

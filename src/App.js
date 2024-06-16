@@ -1,25 +1,17 @@
 import "./App.css";
-//import { Button } from "@mui/material";
+import { Searchbar } from "./Searchbar.js";
+import { useState } from "react";
+import { RecipesList } from "react";
 import { Header } from "./Header.js";
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+  console.log(recipes);
   return (
-    <div className="App" style={{ textAlign: "center" }}>
+    <div className="App">
       <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Searchbar setRecipes={setRecipes} />
+      <RecipesList recipes={recipes} />
     </div>
   );
 }

@@ -11,10 +11,10 @@ export function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundImage: 'linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)' }}>
         <Toolbar>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-            Smaczne Jedzonko
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+            Delicious Food
           </Typography>
-          <Button color="inherit">login</Button>
+          <Button color="inherit" sx={{ marginLeft: 'auto'}}>LOGIN</Button>
         </Toolbar>
       </AppBar>
     </Box>

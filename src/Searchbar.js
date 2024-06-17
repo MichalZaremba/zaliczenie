@@ -28,7 +28,7 @@ export const Searchbar = ({ setRecipes }) => {
 
   return (
     <TextField
-      label="Wyszukaj"
+      label="Search"
       onChange={handleChange}
       InputProps={{
         endAdornment: (

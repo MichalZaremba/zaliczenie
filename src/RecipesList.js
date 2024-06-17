@@ -3,15 +3,15 @@ import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const StyledCard = styled(Card)`
-  height: 120%;
+  height: 100%;
 `;
 export const RecipesList = ({ recipes }) => {
   return (
     <Grid
       container
-      rowSpacing={3}
+      rowSpacing={5}
       columnSpacing={5}
-      padding={{ xs: 0, md: 3, lg: 5 }}
+      padding={{ xs: 0, md: 5, lg: 5 }}
     >
       {recipes.map((recipe) => (
         <Grid item xs={12} md={6} lg={4}>

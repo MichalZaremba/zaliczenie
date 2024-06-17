@@ -19,7 +19,7 @@ export const RecipesList = ({ recipes }) => {
             <CardMedia
               sx={{ height: 140 }}
               image={recipe.recipe.image}
-              title="green iguana"
+              title="Chicken"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">

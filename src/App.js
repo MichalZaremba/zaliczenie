@@ -1,7 +1,7 @@
 import "./App.css";
 import { Searchbar } from "./Searchbar.js";
 import { useState } from "react";
-import { RecipesList } from "react";
+import { RecipesList } from "./RecipesList.js";
 import { Header } from "./Header.js";
 
 function App() {

@@ -11,7 +11,7 @@ const fetchRecipes = async (query, setRecipes) => {
   );
   const data = await response.json();
   console.log(data);
-  setRecipes(data.hits); // Assuming data.hits contains the recipes array
+  setRecipes(data.hits);
 };
 
 export const Searchbar = ({ setRecipes }) => {

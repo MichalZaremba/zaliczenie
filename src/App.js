@@ -9,7 +9,7 @@ function App() {
   console.log(recipes);
   return (
     <div className="App">
-      <Header />
+      <Header bgColor="primary" />
       <Searchbar setRecipes={setRecipes} />
       <RecipesList recipes={recipes} />
     </div>

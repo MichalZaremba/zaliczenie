@@ -5,31 +5,35 @@ import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState, useEffect } from "react";
 
-export const Searchbar = () => {
+const fetchRecipes = async (query, setRecipes) => {
+  const response = await fetch(
+    `https://api.edamam.com/api/recipes/v2?q=${query}&type=public&app_id=8e0adbd2&app_key=b951f76097d27dd724aacfa6f30605ea`,
+  );
+  const data = await response.json();
+  console.log(data);
+  setRecipes(data.hits); // Assuming data.hits contains the recipes array
+};
+
+export const Searchbar = ({ setRecipes }) => {
   const [query, setQuery] = useState("chicken");
   console.log(query);
-  async function fetchRecipes() {
-    const response = await fetch(`https://api.edamam.com/api/recipes/v2?q=chicken&type=public&app_id=8e0adbd2&app_key=b951f76097d27dd724aacfa6f30605ea`);
-    const data = await response.json();
-    console.log(data);
-    }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function handleChange(event) {
-      setQuery(event.target.value);
-    }
+  function handleChange(event) {
+    setQuery(event.target.value);
+  }
 
-    useEffect(() => {
-      fetchRecipes();
-    }, [query]);
+  useEffect(() => {
+    fetchRecipes(query, setRecipes);
+  }, [query, setRecipes]);
 
   return (
     <TextField
       label="Wyszukaj"
+      onChange={handleChange}
       InputProps={{
         endAdornment: (
-          <InputAdornment>
-            <IconButton onClick={fetchRecipes}>
+          <InputAdornment position="end">
+            <IconButton onClick={() => fetchRecipes(query, setRecipes)}>
               <SearchIcon />
             </IconButton>
           </InputAdornment>
